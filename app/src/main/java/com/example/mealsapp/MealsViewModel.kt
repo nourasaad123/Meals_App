@@ -3,6 +3,8 @@ package com.example.mealsapp
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.data.local.Meals
+import com.example.data.repo.MealsRepoImpl
 import com.example.domain.domain.entity.CategoryResponse
 import com.example.domain.domain.usecase.GetMeals
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -27,4 +29,18 @@ class MealsViewModel @Inject constructor(
 
         }
     }
+    /*
+    fun insertRoom(meals: Meals) {
+        viewModelScope.launch {
+          //  repository.insertRoom(meals)
+        }
+    }
+
+    fun deleteRoom(meals:Meals) {
+        viewModelScope.launch {
+         //   repository.deleteRoom(meals)
+        }
+    }
+
+     */
 }

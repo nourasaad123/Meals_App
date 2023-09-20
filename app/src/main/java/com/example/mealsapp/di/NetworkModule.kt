@@ -1,6 +1,9 @@
 package com.example.mealsapp.di
 
+import android.app.Application
+import androidx.room.Room
 import com.example.data.remote.ApiService
+import com.example.data.local.MealsDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -28,9 +31,11 @@ object NetworkModule {
             .baseUrl("https://www.themealdb.com/api/json/v1/1/").client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create()).build()
     }
-@Provides
-@Singleton
+
+    @Provides
+    @Singleton
     fun provideApiService(retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)
     }
+
 }
